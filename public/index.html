@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="music.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header-title">MusicClone</h1>
+      </header>
+      
+      
+    <div class="main_div">
+        <div class="music_container">
+            <h2 class="title">HUKUM</h2>
+            <h3 class="artist">Anirudh Ravichander</h3>
+            <div class="img_container">
+                <img src="images/HUKUM.jpg" alt="">
+            </div>
+            <audio src="F:/MusicClone/Music/HUKUM.mp4" controls></audio>
+
+            <!-- -----Progress Control------ -->
+            <div class="slider_container">
+                <input type="range" min="0" max="100" value="0" class="progress_slider">
+            </div>
+
+            <!---Controls-->
+            <div class="music_controls">
+                <i class="fa-solid fa-backward Previous" title="Previous"></i>
+                <i class="fa-solid fa-play main-button Play" title="Play"></i>
+                <i class="fa-solid fa-forward Next" title="Next"></i>
+            </div>
+
+            <!-- -----Volume Control------ -->
+            <div class="slider_container">
+                <i class="fa fa-volume-down"></i>
+                <input type="range" min="1" max="100" value="99" class="volume_slider">
+                <i class="fa fa-volume-up"></i>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
