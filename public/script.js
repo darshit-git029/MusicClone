@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let dimensions = JSON.parse(e.data)
         iframe.width = dimensions.width
         iframe.height = dimensions.height
-        iframe.contentWindow.postMessage("924961ae-efbf-4534-ba25-f3c6d4440c03", "http://localhost:3000/")
+        iframe.contentWindow.postMessage("822b10a7-1b38-4846-8aad-4463fec830ba", "http://localhost:3000/")
     })
 
     const playButton = document.querySelector('.Play');
