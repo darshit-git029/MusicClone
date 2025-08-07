@@ -1,4 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    const iframe = document.createElement("iframe");
+
+    const iframeStyles = (styleString) => {
+        const style = document.createElement('style');
+        style.textContent = styleString;
+        document.head.append(style);
+    }
+
+    iframeStyles(`
+    .chat-frame {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        border: none;
+        z-index: 9999; /* optional: makes sure it's on top */
+    }
+`);
+    iframe.src = "http://localhost:3000/chatbot"
+    iframe.classList.add('chat-frame')
+    document.body.appendChild(iframe)
+
+    window.addEventListener("message", (e) => {
+        if (e.origin !== "http://localhost:3000") return null
+        let dimensions = JSON.parse(e.data)
+        iframe.width = dimensions.width
+        iframe.height = dimensions.height
+        iframe.contentWindow.postMessage("924961ae-efbf-4534-ba25-f3c6d4440c03", "http://localhost:3000/")
+    })
+
     const playButton = document.querySelector('.Play');
     const previousButton = document.querySelector('.Previous');
     const nextButton = document.querySelector('.Next');
@@ -52,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title.textContent = song.title;
         artist.textContent = song.artist;
         audio.src = `/Music/${song.name}.mp4`;
-        img.src = song.imageUrl; 
+        img.src = song.imageUrl;
         progressSlider.value = 0;
         progressSlider.style.background = 'linear-gradient(to right, #ddd 0%, #ddd 100%)';
     }

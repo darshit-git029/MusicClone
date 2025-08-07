@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const PORT = 3000;
+const PORT = 4000;
 const MUSIC_DIR = path.join(__dirname, 'Music');
 const IMAGES_DIR = path.join(__dirname, 'images');
 
