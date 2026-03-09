@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let dimensions = JSON.parse(e.data)
         iframe.width = dimensions.width
         iframe.height = dimensions.height
-        iframe.contentWindow.postMessage("822b10a7-1b38-4846-8aad-4463fec830ba", "https://salevo-ai.vercel.app/")
+        iframe.contentWindow.postMessage("2a858862-d992-44e0-bcc6-c009f8aa52ad", "https://salevo-ai.vercel.app/")
     })
 
     const playButton = document.querySelector('.Play');
