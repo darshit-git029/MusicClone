@@ -17,16 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
         z-index: 9999; /* optional: makes sure it's on top */
     }
 `);
-    iframe.src = "http://localhost:3000/chatbot"
+    iframe.src = "https://salevo-ai.vercel.app/chatbot"
     iframe.classList.add('chat-frame')
     document.body.appendChild(iframe)
 
     window.addEventListener("message", (e) => {
-        if (e.origin !== "http://localhost:3000") return null
+        if (e.origin !== "https://salevo-ai.vercel.app") return null
         let dimensions = JSON.parse(e.data)
         iframe.width = dimensions.width
         iframe.height = dimensions.height
-        iframe.contentWindow.postMessage("822b10a7-1b38-4846-8aad-4463fec830ba", "http://localhost:3000/")
+        iframe.contentWindow.postMessage("822b10a7-1b38-4846-8aad-4463fec830ba", "https://salevo-ai.vercel.app/")
     })
 
     const playButton = document.querySelector('.Play');
